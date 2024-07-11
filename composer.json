@@ -1,0 +1,19 @@
+{
+	"name": "marshallu/mu-profiles",
+	"description": "Plugin for managing user profiles in WordPress",
+	"keywords": ["wordpress", "plugin"],
+	"homepage": "https://github.com/marshallu/mu-profiles",
+	"license": "MIT",
+	"type": "wordpress-plugin",
+	"require": {
+		"squizlabs/php_codesniffer": "@stable",
+		"wp-coding-standards/wpcs": "^3.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"php-stubs/acf-pro-stubs": "^6.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
