@@ -145,7 +145,7 @@ $toggles = '';
 						<?php } ?>
 
 					</div>
-					<div class="lg:col-span-2">
+					<div class="lg:col-span-3">
 						<?php
 
 						if ( get_field( 'videos' )['youtube_videos'] ) {
