@@ -223,7 +223,7 @@ add_action( 'template_redirect', 'mu_profiles_redirect_department_page_if_set' )
  * Proper way to enqueue scripts and styles
  */
 function mu_profiles_scripts_and_styles() {
-	wp_enqueue_style( 'mu-profiles', get_template_directory_uri() . '/css/mu-profiles.css', array(), filemtime( get_theme_file_path( '/css/mu-profiles.css' ) ), 'all' );
+	wp_enqueue_style( 'mu-profiles', plugin_dir_url( __FILE__ ) . 'css/mu-profiles.css', array(), filemtime( plugin_dir_path( __FILE__ ) . 'css/mu-profiles.css' ), 'all' );
 }
 // add_action( 'admin_print_styles', 'mu_profiles_scripts_and_styles' );
 add_action( 'wp_enqueue_scripts', 'mu_profiles_scripts_and_styles' );
