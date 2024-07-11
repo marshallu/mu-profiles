@@ -31,8 +31,8 @@ $toggles = '';
 			</header>
 
 			<div class="entry-content">
-				<div class="flex flex-wrap lg:space-x-8">
-					<div class="w-full lg:w-1/4">
+				<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+					<div class="lg:col-span-1">
 						<?php
 						if ( get_field( 'employee_headshot' ) ) {
 							$image = get_field( 'employee_headshot' );
@@ -145,7 +145,7 @@ $toggles = '';
 						<?php } ?>
 
 					</div>
-					<div class="w-full lg:flex-1 mt-8 lg:mt-0">
+					<div class="lg:col-span-2">
 						<?php
 
 						if ( get_field( 'videos' )['youtube_videos'] ) {
