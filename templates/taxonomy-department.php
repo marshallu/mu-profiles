@@ -60,7 +60,7 @@ if ( function_exists( 'marsha_widgets_init' ) ) {
 					include plugin_dir_path( __FILE__ ) . 'basic.php';
 				} elseif ( 'grid' === get_field( 'profile_listing_display', 'option' ) ) {
 					include plugin_dir_path( __FILE__ ) . 'grid.php';
-				} elseif ('icon-card' === $dept_listing ) {
+				} elseif ( 'icon-card' === $dept_listing ) {
 					include plugin_dir_path( __FILE__ ) . 'icon-card.php';
 				} else {
 					include plugin_dir_path( __FILE__ ) . 'table.php';
