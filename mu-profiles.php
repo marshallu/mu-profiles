@@ -71,7 +71,6 @@ function mu_profiles_employee_post_type() {
 		'supports'           => array( 'title', 'custom-fields', 'page-attributes', 'revisions' ),
 		'taxonomies'         => array( 'department' ),
 		'menu_icon'          => 'dashicons-groups',
-		'menu_position'      => 55,
 	);
 
 	register_post_type( 'employee', $args );
@@ -209,10 +208,13 @@ function mu_profiles_format_phone( $phone ) {
 add_action( 'init', 'mu_profiles_employee_post_type' );
 add_action( 'init', 'add_custom_department_taxonomy' );
 
+/**
+ * Redirect to the department page if the department has a redirect set.
+ */
 function mu_profiles_redirect_department_page_if_set() {
 	if ( is_tax( 'department' ) ) {
 		if ( get_field( 'department_redirect_department_page', get_queried_object() ) ) {
-			wp_redirect( get_site_url() );
+			wp_safe_redirect( get_site_url() );
 			die();
 		}
 	}
@@ -225,13 +227,14 @@ add_action( 'template_redirect', 'mu_profiles_redirect_department_page_if_set' )
 function mu_profiles_scripts_and_styles() {
 	wp_enqueue_style( 'mu-profiles', plugin_dir_url( __FILE__ ) . 'css/mu-profiles.css', array(), filemtime( plugin_dir_path( __FILE__ ) . 'css/mu-profiles.css' ), 'all' );
 }
-// add_action( 'admin_print_styles', 'mu_profiles_scripts_and_styles' );
 add_action( 'wp_enqueue_scripts', 'mu_profiles_scripts_and_styles' );
 
 /**
  * Get versioned CSS/JS files compiled from Vite.
  *
  * @param string $filename The file name to get the manifest.json.
+ * @param string $main_dir The main directory to look for the file.
+ *
  * @return string
  */
 function mu_profiles_vite( $filename, $main_dir = 'source' ) {

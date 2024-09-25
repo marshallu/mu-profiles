@@ -51,9 +51,9 @@ function mu_profiles_add_custom_column_make_sortable( $columns ) {
 /**
  * Change placeholder text on Create/Edit Profile page to 'Enter Name Here'
  *
- * @param string $title Current Post title.
+ * @return string
  */
-function mu_profiles_change_default_title_to_name( $title ) {
+function mu_profiles_change_default_title_to_name() {
 	$screen = get_current_screen();
 
 	if ( 'employee' === $screen->post_type ) {
@@ -69,18 +69,18 @@ add_filter( 'enter_title_here', 'mu_profiles_change_default_title_to_name' );
  * @return array
  */
 function mu_profiles_modify_title( $data ) {
-	if ( 'employee' === $data['post_type'] && ( isset( $_POST['acf']['field_60d9fadc1cb1d'] ) && isset( $_POST['acf']['field_60d9faf11cb1f'] ) ) ) {
-		$employee_first = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9fadc1cb1d'] ) );
-		$employee_last  = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9faf11cb1f'] ) );
+	if ( 'employee' === $data['post_type'] && ( isset( $_POST['acf']['field_60d9fadc1cb1d'] ) && isset( $_POST['acf']['field_60d9faf11cb1f'] ) ) ) { // phpcs:ignore
+		$employee_first = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9fadc1cb1d'] ) ); // phpcs:ignore
+		$employee_last  = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9faf11cb1f'] ) ); // phpcs:ignore
 
-		if ( isset( $_POST['acf']['field_60d9fb1ad119e'] ) ) {
-			$employee_title = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9fb1ad119e'] ) );
+		if ( isset( $_POST['acf']['field_60d9fb1ad119e'] ) ) { // phpcs:ignore
+			$employee_title = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9fb1ad119e'] ) ); // phpcs:ignore
 		} else {
 			$employee_title = '';
 		}
 
-		if ( isset( $_POST['acf']['field_60d9fae71cb1e'] ) ) {
-			$employee_middle = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9fae71cb1e'] ) );
+		if ( isset( $_POST['acf']['field_60d9fae71cb1e'] ) ) { // phpcs:ignore
+			$employee_middle = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9fae71cb1e'] ) ); // phpcs:ignore
 		} else {
 			$employee_middle = '';
 		}

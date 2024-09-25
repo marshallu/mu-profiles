@@ -8,12 +8,11 @@
 /**
  * Shortcode to display Profile listings.
  *
- * @param array  $atts Shortcode attributes.
- * @param string $content Shortcode content.
+ * @param array $atts Shortcode attributes.
  *
  * @return string Shortcode output.
  */
-function mu_profiles_employee( $atts, $content = null ) {
+function mu_profiles_employee( $atts ) {
 	$data = shortcode_atts(
 		array(
 			'ids'         => false,
@@ -141,12 +140,10 @@ function mu_profiles_employee( $atts, $content = null ) {
 
 				if ( get_field( 'employee_more_info_link' ) ) {
 					$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
+				} elseif ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
+					$output .= '<strong>' . get_the_title() . '</strong><br>';
 				} else {
-					if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
-						$output .= '<strong>' . get_the_title() . '</strong><br>';
-					} else {
-						$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
-					}
+					$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
 				}
 
 				$output .= $position . '<br>';
@@ -295,12 +292,10 @@ function mu_profiles_employee( $atts, $content = null ) {
 					$output .= '<div class="columns w-full lg:w-2/3 lg:px-6 mt-6 lg:mt-0">';
 					if ( get_field( 'employee_more_info_link' ) ) {
 						$output .= '<strong><a href="' . esc_url( get_field( 'employee_more_info_link' ) ) . '" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
-					} else {
-						if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
+					} elseif ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 							$output .= '<strong>' . get_the_title() . '</strong><br>';
-						} else {
-							$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
-						}
+					} else {
+						$output .= '<strong><a href="' . esc_url( get_post_permalink() ) . '" rel="noopener noreferrer" class="underline hover:no-underline">' . get_the_title() . '</a></strong><br>';
 					}
 
 					$output .= $position . '<br>';
@@ -369,7 +364,6 @@ function mu_profiles_employee( $atts, $content = null ) {
 					$output .= '</div>';
 					$output .= '</div>';
 				}
-
 			}
 			$output .= '</div>';
 		} elseif ( 'basic' === $display_style ) {
@@ -473,12 +467,11 @@ function mu_profiles_employee( $atts, $content = null ) {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
 
-				$image       = get_field( 'employee_headshot' );
-				$position    = get_field( 'employee_position' );
-				$office      = get_field( 'employee_office_location' );
-				$phone       = get_field( 'employee_phone_number' );
-				$email       = get_field( 'employee_email_address' );
-
+				$image    = get_field( 'employee_headshot' );
+				$position = get_field( 'employee_position' );
+				$office   = get_field( 'employee_office_location' );
+				$phone    = get_field( 'employee_phone_number' );
+				$email    = get_field( 'employee_email_address' );
 
 				$output .= '<div class="h-full bg-white flex flex-col rounded shadow-md border border-gray-50 ring-1 ring-gray-50/50 ">';
 
@@ -519,11 +512,11 @@ function mu_profiles_employee( $atts, $content = null ) {
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
 
-				$image       = get_field( 'employee_headshot' );
-				$position    = get_field( 'employee_position' );
-				$office      = get_field( 'employee_office_location' );
-				$phone       = get_field( 'employee_phone_number' );
-				$email       = get_field( 'employee_email_address' );
+				$image    = get_field( 'employee_headshot' );
+				$position = get_field( 'employee_position' );
+				$office   = get_field( 'employee_office_location' );
+				$phone    = get_field( 'employee_phone_number' );
+				$email    = get_field( 'employee_email_address' );
 
 				$output .= '<div class="mb-8">';
 				$output .= '<div class="font-bold">' . get_the_title() . '</div>';

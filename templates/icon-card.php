@@ -15,9 +15,7 @@ if ( 2 === intval( get_field( 'department_per_row', $the_term ) ) ) {
 	$grid = 'lg:grid-cols-4';
 }
 ?>
-<div class="hidden"><?php echo get_field( 'department_per_row', $the_term ); ?></div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 <?php echo $grid; ?> gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 <?php echo esc_attr( $grid ); ?> gap-8">
 <?php
 while ( have_posts() ) {
 	the_post();
