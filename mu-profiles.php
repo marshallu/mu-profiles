@@ -67,7 +67,7 @@ function mu_profiles_employee_post_type() {
 		'capability_type'    => 'post',
 		'has_archive'        => false,
 		'hierarchical'       => false,
-		'menu_position'      => null,
+		'menu_position'      => 55,
 		'supports'           => array( 'title', 'custom-fields', 'page-attributes', 'revisions' ),
 		'taxonomies'         => array( 'department' ),
 		'menu_icon'          => 'dashicons-groups',
