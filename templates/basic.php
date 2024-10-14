@@ -29,10 +29,10 @@ if ( is_page_template( array( 'page-full-width.php', 'page-full-width-hero.php',
 					<div class="w-full lg:w-3/4 lg:px-2 mt-4 lg:mt-0">
 						<div class="text-lg font-semibold space-y-1">
 							<div><?php echo esc_attr( get_the_title() ); ?></div>
-							<p class="text-gray-500"><?php the_field( 'employee_position' ); ?></p>
+							<p class="text-gray-500"><?php esc_attr( get_field( 'employee_position' ) ); ?></p>
 						</div>
 						<div class="text-lg mt-1">
-							<p class="text-gray-500"><?php the_field( 'employee_biography' ); ?></p>
+							<p class="text-gray-500"><?php esc_attr( get_field( 'employee_biography' ) ); ?></p>
 						</div>
 					</div>
 				</div>

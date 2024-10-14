@@ -37,12 +37,12 @@ while ( have_posts() ) {
 			</div>
 
 			<?php if ( get_field( 'employee_position' ) ) { ?>
-				<div class="mt-2 font-semibold"><?php the_field( 'employee_position' ); ?></div>
+				<div class="mt-2 font-semibold"><?php esc_attr( get_field( 'employee_position' ) ); ?></div>
 			<?php } ?>
 
 			<div class="my-2 flex-1 border-t border-gray-100 mt-6 pt-6 text-gray-600 font-normal">
 				<?php if ( get_field( 'employee_office_location' ) ) { ?>
-					<div class="mt-1">Location: <?php the_field( 'employee_office_location' ); ?></div>
+					<div class="mt-1">Location: <?php esc_attr( get_field( 'employee_office_location' ) ); ?></div>
 				<?php } ?>
 
 				<?php if ( get_field( 'employee_phone_number' ) ) { ?>
@@ -50,7 +50,7 @@ while ( have_posts() ) {
 				<?php } ?>
 
 				<?php if ( get_field( 'employee_email_address' ) && ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'listing' === get_field( 'profile_show_email_address', 'option' ) ) ) { ?>
-					<div class="my-2">Email:&nbsp;<a href="mailto:<?php the_field( 'employee_email_address' ); ?>"><?php the_field( 'employee_email_address' ); ?></a></div>
+					<div class="my-2">Email:&nbsp;<a href="mailto:<?php esc_attr( get_field( 'employee_email_address' ) ); ?>"><?php esc_attr( get_field( 'employee_email_address' ) ); ?></a></div>
 				<?php } ?>
 			</div>
 		</div>
