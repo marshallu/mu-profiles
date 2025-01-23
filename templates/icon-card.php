@@ -26,7 +26,7 @@ while ( have_posts() ) {
 	$phone    = get_field( 'employee_phone_number' );
 	$email    = get_field( 'employee_email_address' );
 	?>
-	<div class="h-full bg-white flex flex-col rounded shadow-md border border-gray-50 ring-1 ring-gray-50/50 ">
+	<div class="h-full bg-white flex flex-col rounded-sm shadow-md border border-gray-50 ring-1 ring-gray-50/50 ">
 		<img src="<?php echo esc_url( $image['url'] ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $image['ID'], 'large' ) ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="rounded-t block w-full" loading="lazy">
 
 		<div class="h-full flex flex-col pb-8 px-6">

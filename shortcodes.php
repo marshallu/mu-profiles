@@ -473,7 +473,7 @@ function mu_profiles_employee( $atts ) {
 				$phone    = get_field( 'employee_phone_number' );
 				$email    = get_field( 'employee_email_address' );
 
-				$output .= '<div class="h-full bg-white flex flex-col rounded shadow-md border border-gray-50 ring-1 ring-gray-50/50 ">';
+				$output .= '<div class="h-full bg-white flex flex-col rounded-sm shadow-md border border-gray-50 ring-1 ring-gray-50/50 ">';
 
 				if ( get_field( 'employee_headshot' ) ) {
 					$output .= '<img src="' . esc_url( $image['sizes']['medium'] ) . '"  srcset="' . esc_attr( wp_get_attachment_image_srcset( $image['ID'], 'large' ) ) . '" alt="' . esc_url( $image['alt'] ) . '"  class="rounded-t block w-full" loading="lazy" />';
