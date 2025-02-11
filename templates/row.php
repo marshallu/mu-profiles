@@ -44,11 +44,6 @@ while ( have_posts() ) {
 				<?php
 			}
 
-			if ( get_field( 'employee_preferred_pronouns' ) ) {
-				?>
-				Preferred Pronouns: <?php echo esc_attr( get_field( 'employee_preferred_pronouns' ) ); ?><br>
-				<?php
-			}
 
 			echo esc_attr( $position );
 			?>

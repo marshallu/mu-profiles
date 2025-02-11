@@ -19,10 +19,6 @@ $toggles = '';
 				<h1 class="entry-title font-sans uppercase font-semibold text-gray-700 mb-4 text-3xl lg:text-4xl">
 					<?php the_title(); ?>
 					<?php
-					if ( get_field( 'employee_preferred_pronouns' ) ) {
-						echo '<span class="lowercase">(' . esc_attr( get_field( 'employee_preferred_pronouns' ) ) . ')</span>';
-					}
-
 					if ( ! get_field( 'hide_profile', 'option' ) ) {
 						echo ' Profile';
 					}
