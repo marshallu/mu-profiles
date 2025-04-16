@@ -6,14 +6,6 @@
  */
 
 /**
- * Remove YoastSEO metaboxes from Profiles
- */
-function mu_profiles_remove_yoast_metabox_employees() {
-	remove_meta_box( 'wpseo_meta', 'employee', 'normal' );
-}
-add_action( 'add_meta_boxes', 'mu_profiles_remove_yoast_metabox_employees', 11 );
-
-/**
  * Remove Date, Last Modified, and Yoast SEO Columns from Profile listing page
  *
  * @param type $columns Default WordPress post columns.
