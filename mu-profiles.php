@@ -141,6 +141,16 @@ function mu_profiles_deactivate() {
 }
 register_activation_hook( __FILE__, 'mu_profiles_deactivate' );
 
+add_filter(
+	'get_the_archive_title',
+	function ( $title ) {
+		if ( is_tax( 'departments' ) ) {
+			$title = single_term_title( '', false );
+		}
+		return $title;
+	}
+);
+
 /**
  * Rename the department page title from Archives to Profiles.
  *
