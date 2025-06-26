@@ -215,7 +215,7 @@ function mu_profiles_employee( $atts ) {
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">';
 
 				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
-					$output .= '<div class="text-xl font-semibold uppercase">' . get_the_title() . '</a></div>';
+					$output .= '<div class="text-xl font-semibold uppercase">' . get_the_title() . '</div>';
 				} else {
 					$output .= '<div class="text-xl font-semibold uppercase"><a href="' . esc_url( get_post_permalink() ) . '">' . get_the_title() . '</a></div>';
 				}
@@ -418,13 +418,10 @@ function mu_profiles_employee( $atts ) {
 				$output .= '</div>';
 				$output .= '<div class="columns w-full lg:w-3/4 lg:px-6 mt-6 lg:mt-0 entry-content">';
 
-				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
-					$output .= '<div class="text-xl font-semibold uppercase">' . get_the_title() . '</a></div>';
-				} else {
-					$output .= '<div class="text-xl font-semibold uppercase"><a href="' . esc_url( get_post_permalink() ) . '">' . get_the_title() . '</a></div>';
-				}
+				$output .= '<div class="text-xl font-semibold uppercase">' . get_the_title() . '</div>';
 
 				$output .= '<div class="mt-3 mb-4">';
+
 				if ( get_field( 'employee_position' ) ) {
 					$output .= '<div class="font-semibold mb-1">' . $position . '</div>';
 				}
