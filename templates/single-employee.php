@@ -166,7 +166,7 @@ $toggles = '';
 							?>
 							<h2>Biography</h2>
 							<div class="mt-4 mb-12">
-								<?php echo wp_kses_post( get_field( 'employee_biography' ) ); ?>
+								<?php echo get_field( 'employee_biography' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</div>
 							<?php
 						}

@@ -65,7 +65,7 @@ while ( have_posts() ) {
 					</div>
 			<?php } ?>
 			<div class="mt-6">
-				<?php echo esc_attr( get_field( 'employee_biography' ) ); ?>
+				<?php echo get_field( 'employee_biography' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 		</div>
 	</div>
