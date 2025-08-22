@@ -11,6 +11,7 @@ add_action( 'acf/include_fields', function() {
 		return;
 	}
 
+
 	acf_add_local_field_group( array(
 	'key' => 'group_5f591b3bb909c',
 	'title' => 'Employee',
@@ -130,7 +131,6 @@ add_action( 'acf/include_fields', function() {
 				'id' => '',
 			),
 			'return_format' => 'array',
-			'preview_size' => 'full',
 			'library' => 'all',
 			'min_width' => '',
 			'min_height' => '',
@@ -138,7 +138,25 @@ add_action( 'acf/include_fields', function() {
 			'max_width' => 1500,
 			'max_height' => 1500,
 			'max_size' => 1,
-			'mime_types' => 'jpg',
+			'mime_types' => 'jpg, png, jpeg, webp',
+			'preview_size' => 'full',
+		),
+		array(
+			'key' => 'field_60186fba8bbe2',
+			'label' => 'More Info Link',
+			'name' => 'more_info_link',
+			'aria-label' => '',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
 		),
 		array(
 			'key' => 'field_5f5a2ce9645f5',
@@ -185,6 +203,29 @@ add_action( 'acf/include_fields', function() {
 			'return_format' => 'value',
 			'ajax' => 0,
 			'placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
+		),
+		array(
+			'key' => 'field_68a8aff813383',
+			'label' => 'Office Hours',
+			'name' => 'office_hours',
+			'aria-label' => '',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'allow_in_bindings' => 0,
+			'rows' => '',
+			'placeholder' => '',
+			'new_lines' => '',
 		),
 		array(
 			'key' => 'field_5f592355b12ff',
@@ -947,23 +988,6 @@ add_action( 'acf/include_fields', function() {
 			'rows_per_page' => 20,
 		),
 		array(
-			'key' => 'field_60186fba8bbe2',
-			'label' => 'More Info Link',
-			'name' => 'more_info_link',
-			'aria-label' => '',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array(
 			'key' => 'field_64ee390570c1b',
 			'label' => 'Videos',
 			'name' => 'videos',
@@ -1178,6 +1202,8 @@ add_action( 'acf/include_fields', function() {
 			'ui' => 0,
 			'ajax' => 0,
 			'placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
 		),
 		array(
 			'key' => 'field_6579cc6e37e86',
@@ -1266,6 +1292,8 @@ add_action( 'acf/include_fields', function() {
 			'ui' => 0,
 			'ajax' => 0,
 			'placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
 		),
 	),
 	'location' => array(
