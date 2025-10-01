@@ -64,7 +64,8 @@ function mu_profiles_employee_post_type() {
 		'show_in_rest'       => true,
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'profile' ),
-		'capability_type'    => 'post',
+		'capability_type'    => 'employee',
+		'map_meta_cap'       => true,
 		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => 55,
@@ -105,6 +106,12 @@ function add_custom_department_taxonomy() {
 		'show_in_rest'      => true,
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'directory' ),
+		'capabilities'      => array(
+			'manage_terms' => 'manage_department',
+			'edit_terms'   => 'edit_department',
+			'delete_terms' => 'delete_department',
+			'assign_terms' => 'assign_department',
+		),
 	);
 
 	register_taxonomy( 'department', array( 'employee' ), $args );
