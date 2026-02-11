@@ -148,13 +148,14 @@ $toggles = '';
 					<div class="lg:col-span-3">
 						<?php
 
-						if ( get_field( 'videos' )['youtube_videos'] ) {
-							if ( get_field( 'videos' )['video_section_title'] ) {
-								echo '<h2>' . esc_attr( get_field( 'videos' )['video_section_title'] ) . '</h2>';
+						$videos = get_field( 'videos' );
+						if ( $videos && ! empty( $videos['youtube_videos'] ) ) {
+							if ( ! empty( $videos['video_section_title'] ) ) {
+								echo '<h2>' . esc_attr( $videos['video_section_title'] ) . '</h2>';
 							}
 
 							echo '<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">';
-							foreach ( get_field( 'videos' )['youtube_videos'] as $video ) {
+							foreach ( $videos['youtube_videos'] as $video ) {
 								echo '<div class="aspect-video">';
 								echo '<iframe class="h-full w-full" src="https://www.youtube.com/embed/' . esc_attr( $video['youtube_video_id'] ) . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 								echo '</div>';
