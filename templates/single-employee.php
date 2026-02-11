@@ -317,7 +317,7 @@ $toggles = '';
 								$profile_toggle_content .= '<div class="w-full flex items-start px-3 my-2">';
 								$profile_toggle_content .= '<svg class="mr-4 h-6 w-6 fill-green mt-1 lg:mt-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/></svg>';
 								$profile_toggle_content .= '<span class="flex-1">';
-								$profile_toggle_content .= wp_kses_post( $row['service_information'] );
+								$profile_toggle_content .= wp_kses_post( $row['service_information'] ?? '' );
 								$profile_toggle_content .= '</span>';
 								$profile_toggle_content .= '</div>';
 								$profile_toggle_content .= '</div>';
@@ -334,10 +334,10 @@ $toggles = '';
 								$profile_toggle_content .= '<div class="w-full flex items-start px-3 my-2">';
 								$profile_toggle_content .= '<svg class="mr-4 h-6 w-6 fill-green mt-1 lg:mt-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/></svg>';
 								$profile_toggle_content .= '<span class="flex-1">';
-								if ( $row['service_information'] ) {
+								if ( ! empty( $row['service_information'] ) ) {
 									$profile_toggle_content .= wp_kses_post( $row['service_information'] );
 								} else {
-									$profile_toggle_content .= wp_kses_post( $row['service_to_the_college'] );
+									$profile_toggle_content .= wp_kses_post( $row['service_to_the_college'] ?? '' );
 								}
 								$profile_toggle_content .= '</span>';
 								$profile_toggle_content .= '</div>';
@@ -355,10 +355,10 @@ $toggles = '';
 								$profile_toggle_content .= '<div class="w-full flex items-start px-3 my-2">';
 								$profile_toggle_content .= '<svg class="mr-4 h-6 w-6 fill-green mt-1 lg:mt-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/></svg>';
 								$profile_toggle_content .= '<span class="flex-1">';
-								if ( $row['service_information'] ) {
+								if ( ! empty( $row['service_information'] ) ) {
 									$profile_toggle_content .= wp_kses_post( $row['service_information'] );
 								} else {
-									$profile_toggle_content .= wp_kses_post( $row['service_to_the_university'] );
+									$profile_toggle_content .= wp_kses_post( $row['service_to_the_university'] ?? '' );
 								}
 								$profile_toggle_content .= '</span>';
 								$profile_toggle_content .= '</div>';
@@ -393,7 +393,7 @@ $toggles = '';
 								$profile_toggle_content .= '<div class="w-full flex items-start px-3 my-2">';
 								$profile_toggle_content .= '<svg class="mr-4 h-6 w-6 fill-green mt-1 lg:mt-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/></svg>';
 								$profile_toggle_content .= '<span class="flex-1">';
-								$profile_toggle_content .= wp_kses_post( $row['service_information'] );
+								$profile_toggle_content .= wp_kses_post( $row['service_information'] ?? '' );
 								$profile_toggle_content .= '</span>';
 								$profile_toggle_content .= '</div>';
 								$profile_toggle_content .= '</div>';
