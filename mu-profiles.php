@@ -259,6 +259,26 @@ function mu_profiles_seo_post_types( $post_types ) {
 add_filter( 'mu_seo_post_types', 'mu_profiles_seo_post_types' );
 
 /**
+ * Use the employee headshot as the social/OG image for single employee posts.
+ *
+ * @param int $image_id Attachment ID resolved so far, or 0 if nothing found yet.
+ * @param int $post_id  The current post ID.
+ * @return int
+ */
+add_filter(
+	'mu_seo_og_image_id',
+	function ( $image_id, $post_id ) {
+		if ( $image_id || ! is_singular( 'employee' ) ) {
+			return $image_id;
+		}
+		$headshot = get_field( 'employee_headshot', $post_id );
+		return $headshot ? absint( $headshot['ID'] ) : $image_id;
+	},
+	10,
+	2
+);
+
+/**
  * Set the OG type to 'profile' for single employee posts.
  *
  * @param string $type The default OG type.
