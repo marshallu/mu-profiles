@@ -17,26 +17,26 @@ while ( have_posts() ) {
 	$email       = get_field( 'employee_email_address' );
 	$contact_for = get_field( 'employee_contact_for' );
 	?>
-	<div class="marsha-row flex flex-wrap -mx-2 lg:-mx-6 py-6 border-b border-gray-100">
-		<div class="columns w-full lg:w-1/6 lg:px-6 mt-6 lg:mt-0">
+	<div class="marsha-row mup:flex mup:flex-wrap mup:-mx-2 mup:lg:-mx-6 mup:py-6 mup:border-b mup:border-gray-100">
+		<div class="columns mup:w-full mup:lg:w-1/6 mup:lg:px-6 mup:mt-6 mup:lg:mt-0">
 			<?php if ( get_field( 'employee_headshot' ) ) { ?>
-				<img src="<?php echo esc_url( $image['sizes']['medium'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="mx-auto rounded-lg" />
+				<img src="<?php echo esc_url( $image['sizes']['medium'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="mup:mx-auto mup:rounded-lg" />
 			<?php } ?>
 		</div>
-		<div class="columns w-full lg:w-5/12 lg:px-6 mt-6 lg:mt-0">
+		<div class="columns mup:w-full mup:lg:w-5/12 mup:lg:px-6 mup:mt-6 mup:lg:mt-0">
 			<?php
 			if ( get_field( 'employee_more_info_link' ) ) {
 				?>
-					<span class="text-lg font-bold"><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>" class="underline hover:no-underline"><?php the_title(); ?></a></span><br>
+					<span class="mup:text-lg mup:font-bold"><a href="<?php echo esc_url( get_field( 'employee_more_info_link' ) ); ?>" class="mup:underline mup:hover:no-underline"><?php the_title(); ?></a></span><br>
 				<?php
 			} else {
 				if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 					?>
-						<span class="text-lg font-bold"><?php the_title(); ?></span><br>
+						<span class="mup:text-lg mup:font-bold"><?php the_title(); ?></span><br>
 					<?php
 				} else {
 					?>
-					<span class="text-lg font-bold"><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="underline hover:no-underline"><?php the_title(); ?></a></span><br>
+					<span class="mup:text-lg mup:font-bold"><a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer" class="mup:underline mup:hover:no-underline"><?php the_title(); ?></a></span><br>
 					<?php
 				}
 				?>
@@ -71,7 +71,7 @@ while ( have_posts() ) {
 			<?php } ?>
 		</div>
 
-		<div class="columns w-full lg:w-5/12 lg:px-6  mt-6 lg:mt-0">
+		<div class="columns mup:w-full mup:lg:w-5/12 mup:lg:px-6  mup:mt-6 mup:lg:mt-0">
 		<?php
 		if ( $contact_for ) {
 			if ( ! empty( get_field( 'profile_row_title', 'option' ) ) ) {

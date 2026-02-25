@@ -9,7 +9,7 @@
 
 ?>
 <div class="large-table">
-	<table class="table table-striped table-bordered w-full">
+	<table class="table table-striped table-bordered mup:w-full">
 		<thead>
 			<tr class="">
 				<th>Name</th>
@@ -29,7 +29,7 @@
 				the_post();
 				?>
 				<tr class="">
-					<td class="text-gray-900">
+					<td class="mup:text-gray-900">
 						<?php
 						if ( get_field( 'department_hide_link_to_profile', $the_term ) ) {
 							?>
@@ -40,9 +40,9 @@
 							<a href="<?php echo esc_url( get_post_permalink() ); ?>" rel="noopener noreferrer"><?php echo esc_attr( get_the_title() ); ?></a>
 						<?php } ?>
 					</td>
-					<td class="text-gray-900"><?php echo esc_attr( get_field( 'employee_position' ) ); ?></td>
-					<td class="text-gray-900"><?php echo esc_attr( get_field( 'employee_office_location' ) ); ?></td>
-					<td class="text-gray-900"><?php echo esc_attr( mu_profiles_format_phone( get_field( 'employee_phone_number' ) ) ); ?></td>
+					<td class="mup:text-gray-900"><?php echo esc_attr( get_field( 'employee_position' ) ); ?></td>
+					<td class="mup:text-gray-900"><?php echo esc_attr( get_field( 'employee_office_location' ) ); ?></td>
+					<td class="mup:text-gray-900"><?php echo esc_attr( mu_profiles_format_phone( get_field( 'employee_phone_number' ) ) ); ?></td>
 					<?php
 					if ( 'both' === get_field( 'profile_show_email_address', 'option' ) || 'listing' === get_field( 'profile_show_email_address', 'option' ) ) {
 						?>
