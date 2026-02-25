@@ -247,6 +247,34 @@ function mu_profiles_scripts_and_styles() {
 add_action( 'wp_enqueue_scripts', 'mu_profiles_scripts_and_styles' );
 
 /**
+ * Register the employee post type with MU SEO if the plugin is active.
+ *
+ * @param string[] $post_types Array of post type slugs.
+ * @return string[]
+ */
+function mu_profiles_seo_post_types( $post_types ) {
+	$post_types[] = 'employee';
+	return $post_types;
+}
+add_filter( 'mu_seo_post_types', 'mu_profiles_seo_post_types' );
+
+/**
+ * Set the OG type to 'profile' for single employee posts.
+ *
+ * @param string $type The default OG type.
+ * @return string
+ */
+add_filter(
+	'mu_seo_og_type',
+	function ( $type ) {
+		if ( is_singular( 'employee' ) ) {
+			return 'profile';
+		}
+		return $type;
+	}
+);
+
+/**
  * Get versioned CSS/JS files compiled from Vite.
  *
  * @param string $filename The file name to get the manifest.json.
