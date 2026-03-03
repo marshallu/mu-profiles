@@ -15,6 +15,10 @@ if ( have_posts() ) {
 $context = Timber::context();
 $post_id = get_the_ID(); // phpcs:ignore
 
+// Tell HerdPress base.twig not to include no-hero.twig — we handle it ourselves
+// in single-employee.twig so it works across all themes (including Marsha).
+$context['main_template'] = true;
+
 // --- Basic info ---
 $context['employee_title']  = get_the_title();
 $context['post_id']         = $post_id;

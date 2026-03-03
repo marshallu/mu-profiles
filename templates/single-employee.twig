@@ -1,6 +1,8 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+{% include 'partials/no-hero.twig' %}
+
 <div class="w-full xl:container mx-auto px-6 pt-4 lg:pt-12 pb-16" id="content" tabindex="-1">
 	<article class="{{ post_class }}" id="post-{{ post_id }}">
 		<header>
