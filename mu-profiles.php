@@ -22,6 +22,14 @@ require plugin_dir_path( __FILE__ ) . '/display-custom.php';
 require plugin_dir_path( __FILE__ ) . '/editor.php';
 require plugin_dir_path( __FILE__ ) . '/shortcodes.php';
 
+add_filter(
+	'timber/locations',
+	function ( array $dirs ): array {
+		$dirs[] = array( plugin_dir_path( __FILE__ ) . 'templates' );
+		return $dirs;
+	}
+);
+
 /**
  * Register a custom post type called "employee".
  *
