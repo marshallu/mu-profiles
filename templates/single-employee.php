@@ -146,6 +146,9 @@ if ( $has_content_fields ) {
 
 	if ( get_field( 'employee_lists' ) ) {
 		foreach ( get_field( 'employee_lists' ) as $list ) {
+			if ( empty( $list['employee_list_item'] ) ) {
+				continue;
+			}
 			$toggles .= '[mu_toggle content_class="overflow-x-auto" title="' . esc_attr( $list['list_title'] ) . '"]';
 			$toggles .= $build_list( $list['employee_list_item'], 'list_item_detail' );
 			$toggles .= '[/mu_toggle]';
