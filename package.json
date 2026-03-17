@@ -1,6 +1,6 @@
 {
 	"name": "mu-profiles",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "",
 	"scripts": {
 		"dev": "npx @tailwindcss/cli -i ./source/css/mu-profiles.css -o ./css/mu-profiles.css --watch",

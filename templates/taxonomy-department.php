@@ -10,6 +10,9 @@ use Timber\Timber;
 $context  = Timber::context();
 $the_term = get_queried_object();
 
+// Tell herdpress base.twig that this template handles no-hero itself.
+$context['main_template'] = true;
+
 // Page title.
 if ( get_field( 'department_custom_title', $the_term ) ) {
 	$context['page_title'] = get_field( 'department_custom_title', $the_term );

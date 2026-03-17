@@ -9,7 +9,7 @@
  * Plugin Name: MU Profiles
  * Plugin URI: https://www.marshall.edu
  * Description: A facutly, staff, employee management plugin for Marshall University
- * Version: 1.0
+ * Version: 1.1.0
  * Author: Christopher McComas
  */
 
