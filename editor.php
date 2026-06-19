@@ -77,6 +77,12 @@ function mu_profiles_modify_title( $data ) {
 			$employee_middle = '';
 		}
 
+		if ( isset( $_POST['acf']['field_60d9faf11cc20'] ) ) { // phpcs:ignore
+			$employee_suffix = sanitize_text_field( wp_unslash( $_POST['acf']['field_60d9faf11cc20'] ) ); // phpcs:ignore
+		} else {
+			$employee_suffix = '';
+		}
+
 		$full_name = '';
 
 		if ( $employee_title ) {
@@ -90,6 +96,10 @@ function mu_profiles_modify_title( $data ) {
 		}
 
 		$full_name .= $employee_last;
+
+		if ( $employee_suffix ) {
+			$full_name .= ', ' . $employee_suffix;
+		}
 
 		$data['post_title'] = trim( $full_name );
 	}
