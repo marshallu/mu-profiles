@@ -23,22 +23,37 @@ function set_custom_edit_employee_columns( $columns ) {
 	unset( $columns['wpseo-focuskw'] );
 	unset( $columns['wpseo-links'] );
 	unset( $columns['wpseo-linked'] );
-	$columns['title'] = __( 'Name', 'mu-profiles' );
+	$columns['title']      = __( 'Name', 'mu-profiles' );
+	$columns['menu_order'] = __( 'Order', 'mu-profiles' );
 	return $columns;
 }
 add_filter( 'manage_employee_posts_columns', 'set_custom_edit_employee_columns' );
 add_filter( 'manage_edit-employee_sortable_columns', 'mu_profiles_add_custom_column_make_sortable' );
 
 /**
- * Make the Last Modified column sortable
+ * Make the Last Modified and Order columns sortable
  *
  * @param object $columns The list of columns.
  * @return object
  */
 function mu_profiles_add_custom_column_make_sortable( $columns ) {
-	$columns['modified'] = 'modified';
+	$columns['modified']   = 'modified';
+	$columns['menu_order'] = 'menu_order';
 	return $columns;
 }
+
+/**
+ * Render the Order column value for the Profile listing page.
+ *
+ * @param string $column  The column name.
+ * @param int    $post_id The current post ID.
+ */
+function mu_profiles_render_employee_columns( $column, $post_id ) {
+	if ( 'menu_order' === $column ) {
+		echo (int) get_post_field( 'menu_order', $post_id );
+	}
+}
+add_action( 'manage_employee_posts_custom_column', 'mu_profiles_render_employee_columns', 10, 2 );
 
 /**
  * Change placeholder text on Create/Edit Profile page to 'Enter Name Here'
